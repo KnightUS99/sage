@@ -15,7 +15,7 @@ var serverRequests = make(map[int]chan serverResponse)
 var serverRequestLock = sync.Mutex{}
 
 func (b *Bindings) ServerNew() string {
-	addr := fmt.Sprintf("127.0.0.1:%d", b.options.LoopbackPort)
+	addr := fmt.Sprintf("0.0.0.0:%d", b.options.LoopbackPort)
 	if server != nil {
 		return addr
 	}
